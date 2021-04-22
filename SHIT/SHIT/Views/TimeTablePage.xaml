@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cardview="clr-namespace:CardViewNetStandard;assembly=CardViewNetStandard"
+             x:Class="SHIT.Views.TimeTablePage"
+             Title="Расписание">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" >
+             <StackLayout>
+                <StackLayout Padding="10">
+                    <Frame HasShadow="True">
+                        <StackLayout>
+                            <Frame HasShadow="True" BorderColor="DarkCyan" BackgroundColor="LightCyan">
+                                <Label Text="ПОНЕДЕЛЬНИК" 
+                                   
+                                                   FontAttributes="Bold"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"
+                                                    HorizontalOptions="Center"                                                                                               
+                                                    TextColor="DarkCyan"
+                                               LineBreakMode="NoWrap"/>
+                                <Frame.GestureRecognizers>
+                                    
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="1" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок первый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="2" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок второй" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="3" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок третий" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="4" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок четвертый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Frame HasShadow="True">
+                        <StackLayout>
+                            <Frame HasShadow="True" BorderColor="DarkCyan">
+                                <Label Text="ВТОРНИК" 
+                                   
+                                                   FontAttributes="Bold"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"
+                                                    HorizontalOptions="Center"                                                                                               
+                                                    TextColor="DarkCyan"
+                                               LineBreakMode="NoWrap"/>
+                            </Frame>
+
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="1" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок первый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="2" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок второй" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="3" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок третий" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="4" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок четвертый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Frame HasShadow="True">
+                        <StackLayout>
+                            <Frame HasShadow="True" BorderColor="DarkCyan">
+                                <Label Text="СРЕДА" 
+                                   
+                                                   FontAttributes="Bold"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"
+                                                    HorizontalOptions="Center"                                                                                               
+                                                    TextColor="DarkCyan"
+                                               LineBreakMode="NoWrap"/>
+                            </Frame>
+
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="1" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок первый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="2" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок второй" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="3" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок третий" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="4" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок четвертый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Frame HasShadow="True">
+                        <StackLayout>
+                            <Frame HasShadow="True" BorderColor="DarkCyan">
+                                <Label Text="ЧЕТВЕРГ" 
+                                   
+                                                   FontAttributes="Bold"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"
+                                                    HorizontalOptions="Center"                                                                                               
+                                                    TextColor="DarkCyan"
+                                               LineBreakMode="NoWrap"/>
+                            </Frame>
+
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="1" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок первый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="2" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок второй" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="3" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок третий" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="4" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок четвертый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Frame HasShadow="True">
+                        <StackLayout>
+                            <Frame HasShadow="True" BorderColor="DarkCyan">
+                                <Label Text="ПЯТНИЦА" 
+                                   
+                                                   FontAttributes="Bold"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"
+                                                    HorizontalOptions="Center"                                                                                               
+                                                    TextColor="DarkCyan"
+                                               LineBreakMode="NoWrap"/>
+                            </Frame>
+
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="1" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок первый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="2" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок второй" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="3" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок третий" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="4" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок четвертый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Frame HasShadow="True">
+                        <StackLayout>
+                            <Frame HasShadow="True" BorderColor="DarkCyan">
+                                <Label Text="СУББОТА" 
+                                   
+                                                   FontAttributes="Bold"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"
+                                                    HorizontalOptions="Center"                                                                                               
+                                                    TextColor="DarkCyan"
+                                               LineBreakMode="NoWrap"/>
+                            </Frame>
+
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="1" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок первый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="2" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок второй" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="3" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок третий" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label FontSize="Medium" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="4" TextColor="Black" />
+                                        <Span Text=" - " />
+                                        <Span Text="Урок четвертый" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <!--важная херня лист и биндинги-->
+                <StackLayout Padding="10" HeightRequest="400">
+                    <Frame HasShadow="True" >
+                        <StackLayout>
+                            <Frame HasShadow="True" BorderColor="DarkCyan">
+                                <Label Text="ВОСКРЕСЕНЬЕ" 
+                                   
+                                                   FontAttributes="Bold"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"
+                                                    HorizontalOptions="Center"                                                                                               
+                                                    TextColor="DarkCyan"
+                                               LineBreakMode="NoWrap"/>
+                            </Frame>
+                            <ListView>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Label FontSize="Medium" TextColor="Black">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="№" TextColor="Black" />
+                                                    <Span Text=" - " />
+                                                    <Span Text="Урок" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+             </StackLayout>
+        </ScrollView>
+       
+    </ContentPage.Content>
+</ContentPage>

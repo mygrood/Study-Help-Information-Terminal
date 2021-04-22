@@ -17,16 +17,7 @@
         <local:SimplePageModel/>        
     </ContentPage.BindingContext>
     <StackLayout>
-        <Button Text="Добавить событие"
-                        Margin="0"
-                        HorizontalOptions="CenterAndExpand"
-                        BackgroundColor="Transparent"
-                       
-                        FontAttributes="Bold"
-                        FontSize="Default"
-                        TextColor="DarkCyan"
-                        VerticalOptions="CenterAndExpand"            
-                        Command="{Binding OpenPickerCommand}" />
+       
          <plugin:Calendar
         Padding="0"
              Margin="0"
@@ -85,10 +76,12 @@
        
         <plugin:Calendar.EventTemplate>
             <DataTemplate>
-                <StackLayout>                    
-                    <controls:CalendarEvent CalendarEventCommand="{Binding BindingContext.EventSelectedCommand, Source={x:Reference advancedCalendarPage}}" />
-                </StackLayout>
-                      </DataTemplate>
+                    <StackLayout>
+                        <controls:CalendarEvent CalendarEventCommand="{Binding BindingContext.EventSelectedCommand, Source={x:Reference advancedCalendarPage}}" />
+                        
+                    </StackLayout>
+                
+             </DataTemplate>
         </plugin:Calendar.EventTemplate>
         
         <plugin:Calendar.EmptyTemplate>

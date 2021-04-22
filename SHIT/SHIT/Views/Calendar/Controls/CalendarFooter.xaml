@@ -16,7 +16,7 @@
         VerticalOptions="FillAndExpand">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-           
+            
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Label
@@ -27,11 +27,15 @@
             TextColor="{Binding SelectedDateColor}"
             VerticalOptions="CenterAndExpand"
             VerticalTextAlignment="Center" />
-        
 
-        <Label
+        <StackLayout  Grid.Column="1" Orientation="Horizontal">
+            <Button  
+                 FontSize="Small" TextColor="DarkCyan"
+                 BackgroundColor="Transparent" BorderColor="Transparent" BorderWidth="0"
+                 Text="Добавить событие"/>
+            <Label
             x:Name="showHideLabel"
-            Grid.Column="1"
+           
             Margin="0,0,15,0"
             BackgroundColor="Transparent"
             FontAttributes="Bold"
@@ -43,15 +47,19 @@
             TextColor="DarkCyan"
             VerticalOptions="CenterAndExpand"
             VerticalTextAlignment="Center">
-            <Label.Triggers>
-                <DataTrigger
+                <Label.Triggers>
+                    <DataTrigger
                     Binding="{Binding CalendarSectionShown}"
                     TargetType="Label"
                     Value="False">
-                    <Setter Property="Text" Value="&#xf063;" />
-                </DataTrigger>
-            </Label.Triggers>
-        </Label>
+                        <Setter Property="Text" Value="&#xf063;" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+        </StackLayout>
+       
+       
+
         <Grid.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding ShowHideCalendarCommand}" />            
         </Grid.GestureRecognizers>

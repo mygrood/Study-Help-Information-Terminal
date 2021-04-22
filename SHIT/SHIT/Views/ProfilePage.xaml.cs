@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace SHIT.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TestPage : ContentPage
+    public partial class ProfilePage : ContentPage
     {
-        public TestPage()
+        public ProfilePage()
         {
             InitializeComponent();
         }

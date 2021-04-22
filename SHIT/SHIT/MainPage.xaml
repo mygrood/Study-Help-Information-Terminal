@@ -13,8 +13,9 @@
              x:Class="SHIT.MainPage">
 
     <TabbedPage.Children>
-        <Pages:TestPage Title="пейдж1"/>
-        <CalendarPages:SimplePage Title="Календарь"/>
+        <Pages:ProfilePage Title="Профиль"/>
+        <Pages:TimeTablePage Title="Расписание"/>
+        <CalendarPages:SimplePage Title="События"/>
     </TabbedPage.Children>
 
 </TabbedPage>
