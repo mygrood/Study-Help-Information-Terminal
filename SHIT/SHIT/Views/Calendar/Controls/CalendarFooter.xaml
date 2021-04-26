@@ -19,7 +19,7 @@
             
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Label
+        <Label x:Name="lblSelected"
             Grid.Column="0"
             FontAttributes="Bold"
             FontSize="Medium"
@@ -29,10 +29,10 @@
             VerticalTextAlignment="Center" />
 
         <StackLayout  Grid.Column="1" Orientation="Horizontal">
-            <Button  
-                 FontSize="Small" TextColor="DarkCyan"
-                 BackgroundColor="Transparent" BorderColor="Transparent" BorderWidth="0"
-                 Text="Добавить событие"/>
+            <Button x:Name="btnAddEvent" Text="Добавить событие" Clicked="btnAddEvent_Clicked"
+                    FontSize="Small" TextColor="Black"
+                    
+                    BorderColor="Transparent" BorderWidth="0"/>
             <Label
             x:Name="showHideLabel"
            
@@ -44,7 +44,7 @@
             HorizontalOptions="End"
             IsVisible="{Binding FooterArrowVisible}"
             Text="&#xf062;"
-            TextColor="DarkCyan"
+            TextColor="Black"
             VerticalOptions="CenterAndExpand"
             VerticalTextAlignment="Center">
                 <Label.Triggers>

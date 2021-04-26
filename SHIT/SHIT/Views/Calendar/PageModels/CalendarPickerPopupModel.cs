@@ -11,11 +11,11 @@ namespace SHIT.Views.Calendar.PageModels
     {
         public event Action<CalendarPickerResult> Closed;
 
-        public ICommand SuccessCommand => new Command(async () =>
-        {
-            Closed?.Invoke(new CalendarPickerResult() { IsSuccess = true, SelectedDate = SelectedDate });
-            await PopupNavigation.Instance.PopAsync();
-        });
+        public DateTime mY;
+
+       
+
+       
 
         public ICommand CancelCommand => new Command(async () =>
         {

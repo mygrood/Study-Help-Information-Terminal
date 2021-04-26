@@ -4,7 +4,7 @@
              x:Class="SHIT.App">
     <Application.Resources>
         <ResourceDictionary>
-            <!--  Fonts  -->
+            <!--  Fonts  -->            
             <OnPlatform x:Key="FontAwesomeSolid" x:TypeArguments="x:String">
                 <On Platform="Android" Value="font-awesome-5-free-solid.otf#Font Awesome 5 Free Solid" />
                 <On Platform="iOS" Value="FontAwesome5FreeSolid" />
@@ -13,7 +13,7 @@
                 <On Platform="Android" Value="font-awesome-5-free-regular.otf#Font Awesome 5 Free Regular" />
                 <On Platform="iOS" Value="FontAwesome5FreeRegular" />
             </OnPlatform>
-
+            
             <Style x:Key="daysLabelStyle" TargetType="Label">
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="White" />
@@ -22,10 +22,21 @@
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="Margin" Value="5,2" />
             </Style>
-
             <Style x:Key="daysTitleLabelStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="btnMainStyle" TargetType="Button">
+                <Setter Property="CornerRadius"  Value="50"/>
+                <Setter Property="BackgroundColor" Value="DarkRed"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontFamily" Value="MontBold"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextTransform" Value="None"/>                
+
             </Style>
         </ResourceDictionary>
     </Application.Resources>

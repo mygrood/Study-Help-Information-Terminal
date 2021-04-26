@@ -31,18 +31,9 @@
                     FontSize="Large"
                     HorizontalOptions="FillAndExpand"
                     HorizontalTextAlignment="Center"
-                    Text="Choose Date"
+                    Text="Выберите дату"
                     VerticalOptions="Center" />
-                <plugin:Calendar
-                    Padding="10,0"
-                    FooterSectionVisible="False"
-                    HorizontalOptions="Center"
-                    MaximumDate="{Binding MaximumDate}"
-                    MinimumDate="{Binding MinimumDate}"
-                    MonthYear="{Binding MonthYear}"
-                    SelectedDate="{Binding SelectedDate}"
-                    VerticalOptions="Center"
-                    WidthRequest="320" />
+                <DatePicker x:Name="datePicker" FontFamily="MontR" FontSize="Medium" Format="Y"/>
 
                 <StackLayout
                     HorizontalOptions="FillAndExpand"

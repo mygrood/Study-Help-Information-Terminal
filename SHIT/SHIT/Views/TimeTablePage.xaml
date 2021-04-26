@@ -6,63 +6,61 @@
              Title="Расписание">
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" >
-             <StackLayout>
-                <StackLayout Padding="10">
-                    <Frame HasShadow="True">
+             <StackLayout Spacing="2">
+                <StackLayout Padding="10" >
+                    <Frame HasShadow="True" BorderColor="DarkRed" CornerRadius="10">
                         <StackLayout>
-                            <Frame HasShadow="True" BorderColor="DarkCyan" BackgroundColor="LightCyan">
+                            <Frame HasShadow="True" BackgroundColor="DarkRed" CornerRadius="5">
                                 <Label Text="ПОНЕДЕЛЬНИК" 
                                    
                                                    FontAttributes="Bold"
-                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontFamily="MontBold"
                                                     FontSize="Large"
                                                     HorizontalOptions="Center"                                                                                               
-                                                    TextColor="DarkCyan"
-                                               LineBreakMode="NoWrap"/>
-                                <Frame.GestureRecognizers>
-                                    
-                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                </Frame.GestureRecognizers>
+                                                    TextColor="AntiqueWhite"
+                                               LineBreakMode="NoWrap"/>                                
                             </Frame>
-
-                            <Label FontSize="Medium" TextColor="Black">
+                            <Label FontSize="Medium" FontFamily="MontR" TextColor="Black">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="1" TextColor="Black" />
+                                        <Span Text="1"  />
                                         <Span Text=" - " />
                                         <Span Text="Урок первый" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label FontSize="Medium" TextColor="Black">
+                            <Label FontSize="Medium" FontFamily="MontR" TextColor="Black">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="2" TextColor="Black" />
+                                        <Span Text="2" />
                                         <Span Text=" - " />
                                         <Span Text="Урок второй" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label FontSize="Medium" TextColor="Black">
+                            <Label FontSize="Medium" FontFamily="MontR" TextColor="Black">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="3" TextColor="Black" />
+                                        <Span Text="3" />
                                         <Span Text=" - " />
                                         <Span Text="Урок третий" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label FontSize="Medium" TextColor="Black">
+                            <Label FontSize="Medium" FontFamily="MontR" TextColor="Black">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="4" TextColor="Black" />
+                                        <Span Text="4"  />
                                         <Span Text=" - " />
                                         <Span Text="Урок четвертый" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-
                         </StackLayout>
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Frame.GestureRecognizers>
                     </Frame>
                 </StackLayout>
                 <StackLayout Padding="10">

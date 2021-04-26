@@ -18,22 +18,22 @@
     </ContentPage.BindingContext>
     <StackLayout>
        
-         <plugin:Calendar
+         <plugin:Calendar x:Name="calendarS"
         Padding="0"
-             Margin="0"
+        Margin="0"
         AnimateCalendar="True"
         Culture="{Binding Culture}"
         DayTappedCommand="{Binding DayTappedCommand}"
         DayViewCornerRadius="40"
         DayViewSize="40"
         DaysLabelStyle="{StaticResource daysLabelStyle}"
-        DaysTitleColor="Orange"
+        DaysTitleColor="DarkRed"
         DaysTitleHeight="40"
         DaysTitleLabelStyle="{StaticResource daysTitleLabelStyle}"
         DaysTitleMaximumLength="TwoChars"
-        DeselectedDayTextColor="Blue"
+        DeselectedDayTextColor="Black"
         DisableSwipeDetection="False"
-        EventIndicatorColor="Red"
+        EventIndicatorColor="IndianRed"
         EventIndicatorSelectedColor="IndianRed"
         EventIndicatorSelectedTextColor="AliceBlue"
         EventIndicatorTextColor="WhiteSmoke"
@@ -42,12 +42,13 @@
        
         
         HorizontalOptions="FillAndExpand"
-        MonthLabelColor="Red"
+        MonthLabelColor="DarkRed"
+                          
         MonthYear="{Binding MonthYear}"
         OtherMonthDayColor="Gray"
-        OtherMonthDayIsVisible="False"
+        OtherMonthDayIsVisible="True"
         SelectedDate="{Binding SelectedDate}"
-        SelectedDateColor="Red"
+        SelectedDateColor="DarkRed"
         SelectedDateTextFormat="ddd, dd MMM yyyy"
         SelectedDayBackgroundColor="DarkCyan"
         SelectedDayTextColor="Cyan"
@@ -56,8 +57,8 @@
         SwipeToChangeMonthEnabled="False"
         SwipeUpCommand="{Binding SwipeUpCommand}"
         SwipeUpToHideEnabled="False"
-        TodayFillColor="Silver"
-        TodayOutlineColor="Blue"
+        TodayFillColor="LightCoral"
+        TodayOutlineColor="Black"
         VerticalOptions="FillAndExpand"
         YearLabelColor="Blue">
 

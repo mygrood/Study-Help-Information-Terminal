@@ -2,6 +2,8 @@
 using SHIT.Views.Calendar.Model;
 using SHIT.Views.Calendar.PageModels;
 using System;
+using System.Windows.Input;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace SHIT.Views.Calendar.Pages
@@ -11,9 +13,11 @@ namespace SHIT.Views.Calendar.Pages
     {
         private readonly Action<CalendarPickerResult> _onClosedPopup;
 
+        private SimplePage SimplePage;
         
-        public CalendarPickerPopup(Action<CalendarPickerResult> onClosedPopup)
+        public CalendarPickerPopup(Action<CalendarPickerResult> onClosedPopup,SimplePage simple)
         {
+            SimplePage = simple;
             _onClosedPopup = onClosedPopup;
             InitializeComponent();
         }
@@ -33,5 +37,11 @@ namespace SHIT.Views.Calendar.Pages
 
             base.OnDisappearing();
         }
+
+        public ICommand SuccessCommand => new Command(async () =>
+        {
+           
+        });
+
     }
 }

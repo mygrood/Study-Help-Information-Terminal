@@ -6,14 +6,13 @@
             mc:Ignorable="d"
             xmlns:Pages="clr-namespace:SHIT.Views"     
             xmlns:CalendarPages="clr-namespace:SHIT.Views.Calendar.Pages"  
-            UnselectedTabColor="LightSlateGray"
+            UnselectedTabColor="DarkGray"
             SelectedTabColor="White"
-            BarBackgroundColor="#192e4A"
-            
+            BarBackgroundColor="DarkRed"            
              x:Class="SHIT.MainPage">
 
     <TabbedPage.Children>
-        <Pages:ProfilePage Title="Профиль"/>
+        <Pages:HomePage Title="Главная"/>
         <Pages:TimeTablePage Title="Расписание"/>
         <CalendarPages:SimplePage Title="События"/>
     </TabbedPage.Children>

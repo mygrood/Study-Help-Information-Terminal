@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHIT.Views.Calendar.Pages.EditEventPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10" >
+                <Label  Text="Событие"  
+                Margin="0,0,0,10"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"                
+                TextTransform="Uppercase"
+                FontSize="Large"
+                FontFamily="MontBold"                
+                TextColor="DarkRed"
+                LineBreakMode="NoWrap"/>
+
+                <StackLayout Margin="0,0,0,10">
+                    <Label Text="Дата" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium" Margin="0"/>
+                    <DatePicker x:Name="dpDate" Format="d" 
+                       TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Время" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium"/>
+                    <TimePicker x:Name="tpTime" Format="t"
+                        TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Наименование события" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium"/>
+                    <Entry x:Name="entrName" Keyboard="Text" Placeholder="Экзамен..." 
+                        TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"
+                        ClearButtonVisibility="WhileEditing"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Описание" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium"/>
+                    <Editor x:Name="entrDescription" Keyboard="Text"  
+                        TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"/>
+                </StackLayout>                
+               
+                <Button x:Name="btnSave" Text="Сохранить" Clicked="btnSave_Clicked"
+                    Style="{StaticResource btnMainStyle}"/>
+                
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

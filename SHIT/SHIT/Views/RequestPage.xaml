@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHIT.Views.RequestPage"
+             Title="Справка о периоде обучения">
+    <ContentPage.Content>
+        <StackLayout Padding="10" >
+            <Label  Text="Заполните форму"  
+                Margin="0,0,0,10"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"                
+                TextTransform="Uppercase"
+                FontSize="Large"
+                FontFamily="MontBold"                
+                TextColor="DarkRed"
+                LineBreakMode="NoWrap"/>
+            
+            <StackLayout Margin="0,0,0,10">
+                <Label Text="Наименование группы" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium" Margin="0"/>
+                <Entry x:Name="entrGroup" Placeholder="11Ю..." 
+                       TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"
+                        ClearButtonVisibility="WhileEditing" />
+            </StackLayout>
+            <StackLayout>
+                <Label Text="ФИО обучающегося" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium"/>
+                <Entry x:Name="entrFio" Keyboard="Text" Placeholder="Имя Фамилия"
+                        TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"
+                        ClearButtonVisibility="WhileEditing"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Основание" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium"/>
+                <Entry x:Name="entrWhy" Keyboard="Text" Placeholder="По требованию" 
+                        TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"
+                        ClearButtonVisibility="WhileEditing"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Необходимое количество" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium"/>
+                <Entry x:Name="entrSum" Keyboard="Numeric"  
+                        TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"
+                        ClearButtonVisibility="WhileEditing"/>
+            </StackLayout>
+            <Button x:Name="btnSendRequest" Text="Отправить заявку" Clicked="btnSendRequest_Clicked"
+                    Style="{StaticResource btnMainStyle}"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

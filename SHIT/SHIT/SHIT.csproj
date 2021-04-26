@@ -11,10 +11,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Montserrat-Bold.ttf" />
+    <None Remove="Resources\Montserrat-Italic.ttf" />
+    <None Remove="Resources\Montserrat-Regular.ttf" />
+    <None Remove="Resources\Montserrat-SemiBold.ttf" />
+    <None Remove="Views\MontserratAlternates-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Montserrat-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Montserrat-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Montserrat-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Montserrat-SemiBold.ttf" />
+    <EmbeddedResource Include="Resources\MontserratAlternates-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.10" />
     <PackageReference Include="SkiaSharp.Extended" Version="1.60.0" />
     <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3-preview.40" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.0-beta" />
     <PackageReference Include="Syncfusion.Licensing" Version="18.4.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.4.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.4.0.48" />
@@ -24,15 +45,20 @@
     <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="18.4.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="18.4.0.48" />
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.1.1.1-beta" />
+    <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.763-beta" />
     <PackageReference Include="Xamarin.Plugin.Calendar" Version="1.2.2936" />
     <PackageReference Include="XamarinForms.CardView.NetStandard" Version="1.1.1.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\ProfilePage.xaml.cs">
-      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    <Compile Update="Views\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RequestPage.xaml.cs">
+      <DependentUpon>RequestPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -49,10 +75,16 @@
     <EmbeddedResource Update="Views\Calendar\Pages\CalendarPickerPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Calendar\Pages\EditEventPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Calendar\Pages\SimplePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ProfilePage.xaml">
+    <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RequestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TimeTablePage.xaml">
