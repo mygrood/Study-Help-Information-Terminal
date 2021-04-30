@@ -5,20 +5,29 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using Xamarin.Auth;
 using Xamarin.Plugin.Calendar.Models;
+using Android;
+using Android.Content;
+
 
 namespace SHIT
 {
-    class General
+
+    public class General
     {
 
-        
+        public static bool storagePerm = false;
         public static EventCollection Events { get; set; }
 
-        static string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        //public static string folderPath = FileSystem.AppDataDirectory; 
+        //public static string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
         static string CalendSavesFile = "calendarEvents.json";
+
+        public static string folderPath = GetExternalStorage();
+
+        static string file = Path.Combine(folderPath, CalendSavesFile);
+
+
 
         public static DateTime DateTime;
 
@@ -28,19 +37,7 @@ namespace SHIT
 
         public static void SaveEvents()
         {
-            if (!General.Events.ContainsKey(DateTime.MinValue))
-            {
-                General.Events.Add(DateTime.MinValue, new ObservableCollection<AdvancedEventModel>());
-                var todayEvents = General.Events[DateTime.MinValue] as ObservableCollection<AdvancedEventModel>;
-                todayEvents.Add(new AdvancedEventModel
-                {
-                    Name = "please",
-                    Description = "dont delete",
-                    date = DateTime.MinValue,
-                    Starting = new TimeSpan()
-                });
-
-            }
+           
                         
 
             EventCollection list = Events;
@@ -51,10 +48,10 @@ namespace SHIT
             List<AdvancedEventModel> listEv = new List<AdvancedEventModel>();
             foreach (var item in list)
             {
-                var todayEvents = General.Events[item.Key] as ObservableCollection<AdvancedEventModel>;
+                
 
                 
-                foreach (var t in todayEvents)
+                foreach (AdvancedEventModel t in item.Value)
                 {
                     listEv.Add(t);
                     //writer.WriteStartObject();
@@ -70,22 +67,20 @@ namespace SHIT
             }
             //writer.WriteEndArray();
 
-            string e = JsonConvert.SerializeObject(listEv);
-
-            
+            string e = JsonConvert.SerializeObject(listEv);            
 
             //JsonSerializerSettings settings = new JsonSerializerSettings { Converters = new[] { new MyConverterCalendar() } };
             //string output = JsonConvert.SerializeObject(General.Events,settings);
 
-            //if (String.IsNullOrEmpty(e)) return;
+            if (String.IsNullOrEmpty(e)) return;
             // перезаписываем файл
-            File.WriteAllText(Path.Combine(folderPath, CalendSavesFile), e);
+            File.WriteAllText(file, e);
         }
         public static void OpenEvents()
         {            
-            if (File.Exists(Path.Combine(folderPath, CalendSavesFile)))
+            if (File.Exists(file))
             {
-                string inputJSON = File.ReadAllText(Path.Combine(folderPath, CalendSavesFile));
+                string inputJSON = File.ReadAllText(file);
                
                 var results = JsonConvert.DeserializeObject<List<AdvancedEventModel>>(inputJSON);
                // ObservableCollection<AdvancedEventModel> inputDes = new ObservableCollection<AdvancedEventModel>(results);
@@ -111,18 +106,51 @@ namespace SHIT
                 {
                     if(!General.Events.Keys.Contains(item.Key))
                         General.Events.Add(item.Key, item.Value);
-                }              
+                }
+                if (!General.Events.Keys.Contains(DateTime.MinValue))
+                {
+                    General.Events.Add(DateTime.MinValue, new ObservableCollection<AdvancedEventModel>());
+                    var todayEvents = General.Events[DateTime.MinValue] as ObservableCollection<AdvancedEventModel>;
+                    todayEvents.Add(new AdvancedEventModel
+                    {
+                        Name = "please",
+                        Description = "dont delete",
+                        date = DateTime.MinValue,
+                        Starting = new TimeSpan()
+                    });
+                }
                 
+            }
+            else
+            {
+                General.Events.Add(DateTime.MinValue, new ObservableCollection<AdvancedEventModel>());
+                    var todayEvents = General.Events[DateTime.MinValue] as ObservableCollection<AdvancedEventModel>;
+                    todayEvents.Add(new AdvancedEventModel
+                    {
+                        Name = "please",
+                        Description = "dont delete",
+                        date = DateTime.MinValue,
+                        Starting = new TimeSpan()
+                    });
 
             }
         }
         public static void CalendarClear()
         {                       
             // удаляем файл
-            File.Delete(Path.Combine(folderPath, CalendSavesFile));
+            File.Delete(file);
            
-        }        
-       
+        }
+
+
+
+        public static string GetExternalStorage()
+        {
+            Context context = Android.App.Application.Context;
+            var filepath = context.GetExternalFilesDir("");
+            return filepath.Path;
+        }
+
     }
 
     

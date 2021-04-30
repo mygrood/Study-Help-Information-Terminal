@@ -40,8 +40,8 @@
                 <StackLayout>
                     <Label Text="Описание" TextColor="Black"
                        FontFamily="MontSemiBold" FontSize="Medium"/>
-                    <Editor x:Name="entrDescription" Keyboard="Text"  
-                        TextColor="Black"
+                    <Editor x:Name="entrDescription" Keyboard="Text"   
+                        TextColor="Black" HeightRequest="200"
                        FontFamily="MontR" FontSize="Medium"/>
                 </StackLayout>                
                

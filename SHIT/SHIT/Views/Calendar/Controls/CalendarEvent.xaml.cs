@@ -33,7 +33,7 @@ namespace SHIT.Views.Calendar.Controls
         {
             if (BindingContext is AdvancedEventModel eventModel)
             {
-                CalendarEventCommand?.Execute(eventModel);
+                //CalendarEventCommand?.Execute(eventModel);
             }
         }
 

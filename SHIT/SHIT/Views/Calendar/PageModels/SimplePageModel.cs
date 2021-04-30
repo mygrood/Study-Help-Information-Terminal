@@ -26,7 +26,7 @@ namespace SHIT.Views.Calendar.PageModels
             
         });
 
-        public ICommand EventSelectedCommand => new Command(async (item) => await ExecuteEventSelectedCommand(item));
+       public ICommand EventSelectedCommand => new Command(async (item) => await ExecuteEventSelectedCommand(item));
 
         public SimplePageModel() : base()
         {
@@ -36,7 +36,7 @@ namespace SHIT.Views.Calendar.PageModels
 
             // testing all kinds of adding events
             // when initializing collection
-            General.Events = new EventCollection();
+            //General.Events = new EventCollection();
                 //{
             //    //[DateTime.Now.AddDays(-3)] = new List<AdvancedEventModel>(GenerateEvents(10, "Cool")),
             //    //[DateTime.Now.AddDays(-6)] = new DayEventCollection<AdvancedEventModel>(Color.Purple, Color.Purple)
@@ -135,7 +135,7 @@ namespace SHIT.Views.Calendar.PageModels
             if (item is AdvancedEventModel eventModel)
             {
                 var title = $"{eventModel.Name}";
-                var message = $"Начало: {eventModel.Starting:HH:mm}{Environment.NewLine} Описание: {eventModel.Description}";
+                var message = "Начало: " + eventModel.Starting + "\nОписание: " + eventModel.Description;
                 await App.Current.MainPage.DisplayAlert(title, message, "Ok");
                 Console.WriteLine(message);
             }

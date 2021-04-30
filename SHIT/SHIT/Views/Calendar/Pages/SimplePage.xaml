@@ -37,9 +37,9 @@
         EventIndicatorSelectedColor="IndianRed"
         EventIndicatorSelectedTextColor="AliceBlue"
         EventIndicatorTextColor="WhiteSmoke"
-        EventIndicatorType="Background"
-        Events="{Binding Events}"
+        EventIndicatorType="Background"       
        
+                          
         
         HorizontalOptions="FillAndExpand"
         MonthLabelColor="DarkRed"
