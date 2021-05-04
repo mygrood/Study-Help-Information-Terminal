@@ -4,22 +4,29 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="SHIT.Views.HomePage"
              Title="Главная">
-    <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="15">
-            <ImageButton x:Name="btnAbout" Source="https://yt3.ggpht.com/ytc/AAUvwniDchd2J0imfxbHZ_OXevoKfHNLul4DDnyzdYeR=s900-c-k-c0x00ffffff-no-rj" 
-                   HorizontalOptions="Center"   Aspect="AspectFill" Clicked="btnAbout_Clicked">
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+            <ImageButton x:Name="btnAbout" Source="logo.png" Grid.Row="0"
+                   HorizontalOptions="Center" Aspect="AspectFit" BackgroundColor="Transparent" Clicked="btnAbout_Clicked">
                 
             </ImageButton>
-            <Button x:Name="btnSpecialization" Text="Специальности" Clicked="btnSpecialization_Clicked"
+            <StackLayout Grid.Row="1">
+                <Button x:Name="btnSpecialization" Text="Специальности" Clicked="btnSpecialization_Clicked"
                     Style="{StaticResource btnMainStyle}" />
-            <Button x:Name="btnTeachers" Text="Преподаватели"  Clicked="btnTeachers_Clicked"
+                <Button x:Name="btnTeachers" Text="Преподаватели"  Clicked="btnTeachers_Clicked"
                     Style="{StaticResource btnMainStyle}"/>
-            <Button x:Name="btnAllLessons" Text="Список уроков"  Clicked="btnAllLessons_Clicked"
+                <Button x:Name="btnAllLessons" Text="Список уроков"  Clicked="btnAllLessons_Clicked"
                     Style="{StaticResource btnMainStyle}"/>
-            <Button x:Name="btnRequest"  Text="Заказать справку" Clicked="btnRequest_Clicked"
+                <Button x:Name="btnRequest"  Text="Заказать справку" Clicked="btnRequest_Clicked"
                     CornerRadius="50" BackgroundColor="White" BorderColor="DarkRed" BorderWidth="5"
                     TextColor="DarkRed" FontFamily="MontBold"  TextTransform="None" FontSize="Medium"/>
 
-        </StackLayout>
-    </ContentPage.Content>
+            </StackLayout>
+           
+        
+    </Grid>
 </ContentPage>

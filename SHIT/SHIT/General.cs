@@ -27,10 +27,26 @@ namespace SHIT
 
         static string file = Path.Combine(folderPath, CalendSavesFile);
 
+        /* 1 - банковское дело
+         * 2 - логистика
+         * 3 - право
+         * 4 - экономика
+         * 5 - архивоведение
+         * 6 - товароведение
+         * 7 - прикладная информатика и прогр
+         * 8 - коммерция
+         * 9 - дошкольное обр
+         * 10 - преподавание в нач классах
+         * 11 - музыкальное обр
+         * 12 - страховое дело
+         */
+        public static int thisSpecialisation;
 
 
         public static DateTime DateTime;
-
+        public static AdvancedEventModel thisEvent;
+        public static int isEdit = 0;
+        
 
 
 

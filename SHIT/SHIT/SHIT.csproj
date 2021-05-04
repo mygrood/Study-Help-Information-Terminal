@@ -10,7 +10,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup>    
     <None Remove="Resources\Montserrat-Bold.ttf" />
     <None Remove="Resources\Montserrat-Italic.ttf" />
     <None Remove="Resources\Montserrat-Regular.ttf" />
@@ -18,7 +18,7 @@
     <None Remove="Views\MontserratAlternates-Regular.ttf" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup>    
     <EmbeddedResource Include="Resources\Montserrat-Bold.ttf" />
     <EmbeddedResource Include="Resources\Montserrat-Italic.ttf" />
     <EmbeddedResource Include="Resources\Montserrat-Regular.ttf" />
@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MR.Gestures" Version="2.1.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.11" />
@@ -42,7 +43,11 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.763-beta" />
     <PackageReference Include="Xamarin.Plugin.Calendar" Version="1.2.2936" />
-    <PackageReference Include="XamarinForms.CardView.NetStandard" Version="1.1.1.5" />
+    <PackageReference Include="XamarinForms.CardView.NetStandard" Version="1.1.1.5" />    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Pictures\strakh.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,6 +62,9 @@
     </Compile>
     <Compile Update="Views\RequestPage.xaml.cs">
       <DependentUpon>RequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SpecializationPage.xaml.cs">
+      <DependentUpon>SpecializationPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -83,6 +91,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RequestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SpecializationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TimeTablePage.xaml">

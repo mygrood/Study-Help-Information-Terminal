@@ -14,13 +14,13 @@ namespace SHIT.Views
     {
         public HomePage()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         private async void btnRequest_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RequestPage());
-            
+
         }
 
         private void btnAbout_Clicked(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace SHIT.Views
 
         private void btnSpecialization_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new SpecializationPage());
         }
 
         private void btnTeachers_Clicked(object sender, EventArgs e)

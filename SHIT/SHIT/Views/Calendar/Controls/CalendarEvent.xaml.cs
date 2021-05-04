@@ -7,8 +7,8 @@ using SHIT.Views.Calendar.Model;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-
+using Android.Widget;
+using SHIT.Views.Calendar.Pages;
 
 namespace SHIT.Views.Calendar.Controls
 {
@@ -29,13 +29,18 @@ namespace SHIT.Views.Calendar.Controls
             set => SetValue(CalendarEventCommandProperty, value);
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
-            if (BindingContext is AdvancedEventModel eventModel)
+            if (BindingContext is AdvancedEventModel)
             {
-                //CalendarEventCommand?.Execute(eventModel);
+                AdvancedEventModel advancedEventModel = (AdvancedEventModel)BindingContext;
+                General.thisEvent = advancedEventModel;
+                General.isEdit = 1;
+                await Navigation.PushAsync(new EditEventPage());
             }
+            
+            
         }
-
+        
     }
 }

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pic ="clr-namespase:SHIT.Pictures"
+             x:Class="SHIT.Views.SpecializationPage">
+    <ScrollView>
+        <Grid Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.ColumnSpan="3" 
+               Text="Специальности" Margin="0,0,0,10"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"                
+                TextTransform="Uppercase"
+                FontSize="Large"
+                FontFamily="MontBold"                
+                TextColor="DarkRed"
+                LineBreakMode="NoWrap"/>
+
+            <Frame x:Name="stBank"  Grid.Column="0" Grid.Row="1"
+                      Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="bank.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Банковское дело"/>
+                </StackLayout>
+
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Bank" Tapped="Bank_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stLogist" Grid.Column="1" Grid.Row="1"
+                Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="logist.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Операционная деятельность в логистике"/>
+
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Logist" Tapped="Logist_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stPravo" Grid.Column="2" Grid.Row="1"
+                Style="{DynamicResource frameSpecial}">
+                <StackLayout >
+                    <Image Style="{DynamicResource imageSpecial}" Source="pravo.png" />
+                    <Label Style="{DynamicResource nameSpecial}" 
+                        Text="Право и организация социального обеспечения"/>
+
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Pravo" Tapped="Pravo_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stEconomika" Grid.Column="0" Grid.Row="2"
+                   Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="economy.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Экономика и бухгалтерский учет"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Economika" Tapped="Economika_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stArkhiv" Grid.Column="1" Grid.Row="2"
+                   Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="arkhiv.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Документация и архивоведение"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Arkhiv" Tapped="Arkhiv_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stTovar" Grid.Column="2" Grid.Row="2"
+                         Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="tovar.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Товароведение"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Tovar" Tapped="Tovar_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stIT" Grid.Column="0" Grid.Row="3"
+                         Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="IT.png" />
+                    <Label Style="{DynamicResource nameSpecial}" FontSize="Micro" Text="Прикладная информатика
+                   и программирование"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="IT" Tapped="IT_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stCommerce" Grid.Column="1" Grid.Row="3"
+                   Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="commercy.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Коммерция"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Commerce" Tapped="Commerce_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stDoshkolnoe" Grid.Column="2" Grid.Row="3"
+                         Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="doshkolnoe.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Дошкольное образование"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Doshkolnoe" Tapped="Doshkolnoe_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stSchool" Grid.Column="0" Grid.Row="4"
+                   Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="school.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Преподавание в начальных классах"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="School" Tapped="School_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stMusic" Grid.Column="1" Grid.Row="4"
+                   Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="music.png" />
+                    <Label Style="{DynamicResource nameSpecial}" Text="Музыкальное образование"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Music" Tapped="Music_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="stStrah" Grid.Column="2" Grid.Row="4"
+                   Style="{DynamicResource frameSpecial}">
+                <StackLayout>
+                    <Image Style="{DynamicResource imageSpecial}" Source="strakh.png"/>
+                    <Label Style="{DynamicResource nameSpecial}" Text="Страховое дело"/>
+                </StackLayout>
+                <Frame.GestureRecognizers >
+                    <TapGestureRecognizer x:Name="Strah" Tapped="Strah_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ScrollView>
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="nameSpecial">
+                <Setter Property="LineBreakMode" Value="WordWrap"/>
+                <Setter Property="TextColor" Value="DarkRed"/>
+                <Setter Property="FontFamily" Value="MontBold"/>
+                <Setter Property="FontSize" Value="Caption"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+
+            </Style>
+            <Style TargetType="Image" x:Key="imageSpecial">
+                <Setter Property="HeightRequest" Value="70"/>
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style TargetType="Frame" x:Key="frameSpecial">
+                <Setter Property="BorderColor" Value="DarkRed"/>
+                
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="3,7,3,5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

@@ -4,7 +4,8 @@
              x:Class="SHIT.Views.RequestPage"
              Title="Справка о периоде обучения">
     <ContentPage.Content>
-        <StackLayout Padding="10" >
+        <ScrollView>
+             <StackLayout Padding="10" >
             <Label  Text="Заполните форму"  
                 Margin="0,0,0,10"
                 VerticalOptions="Start" 
@@ -51,5 +52,7 @@
                     Style="{StaticResource btnMainStyle}"/>
             
         </StackLayout>
+        </ScrollView>
+       
     </ContentPage.Content>
 </ContentPage>

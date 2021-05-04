@@ -24,12 +24,12 @@ namespace SHIT
         {
             
             General.Events = new EventCollection();
-            General.OpenEvents();
-
+            General.OpenEvents();            
             InitializeComponent();     
             
             Console.WriteLine( General.folderPath);
-
+            
+            
             MainPage = new NavigationPage(new MainPage()) { BarBackgroundColor=Color.DarkRed}; 
 
         }

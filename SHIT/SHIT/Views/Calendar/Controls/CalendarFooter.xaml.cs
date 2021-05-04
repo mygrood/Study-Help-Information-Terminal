@@ -25,6 +25,8 @@ namespace SHIT.Views.Calendar.Controls
 
         private async void btnAddEvent_Clicked(object sender, EventArgs e)
         {
+
+            General.isEdit = 0;
             General.DateTime = Convert.ToDateTime(lblSelected.Text);
             await Navigation.PushAsync(new EditEventPage());
 

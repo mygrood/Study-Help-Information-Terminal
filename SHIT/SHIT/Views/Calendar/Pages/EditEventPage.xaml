@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SHIT.Views.Calendar.Pages.EditEventPage">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
             <StackLayout Padding="10" >
                 <Label  Text="Событие"  
                 Margin="0,0,0,10"
@@ -38,18 +39,23 @@
                         ClearButtonVisibility="WhileEditing"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Описание" TextColor="Black"
+                    <Label Text="Описание" TextColor="Black" 
                        FontFamily="MontSemiBold" FontSize="Medium"/>
-                    <Editor x:Name="entrDescription" Keyboard="Text"   
-                        TextColor="Black" HeightRequest="200"
+                    <Editor x:Name="entrDescription" Keyboard="Text"  
+                        TextColor="Black" HeightRequest="150"
                        FontFamily="MontR" FontSize="Medium"/>
                 </StackLayout>                
                
                 <Button x:Name="btnSave" Text="Сохранить" Clicked="btnSave_Clicked"
                     Style="{StaticResource btnMainStyle}"/>
-                
 
-            </StackLayout>
+                <Button x:Name="btnChanges" Text="Сохранить изменения" Clicked="btnChanges_Clicked"     
+                    Style="{StaticResource btnMainStyle}"/>
+                <Button x:Name="btnDelete" Text="Удалить событие" Clicked="btnDelete_Clicked"
+                    Style="{StaticResource btnMainStyle}"/>
+                </StackLayout>
         </StackLayout>
+        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>

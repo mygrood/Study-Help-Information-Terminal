@@ -26,7 +26,7 @@ namespace SHIT.Views.Calendar.PageModels
             
         });
 
-       public ICommand EventSelectedCommand => new Command(async (item) => await ExecuteEventSelectedCommand(item));
+       public ICommand EventSelectedCommand => new Command(async (item) =>  ExecuteEventSelectedCommand(item));
 
         public SimplePageModel() : base()
         {
@@ -130,13 +130,14 @@ namespace SHIT.Views.Calendar.PageModels
             Console.WriteLine(message);
         }
 
-        private async Task ExecuteEventSelectedCommand(object item)
+        private async void ExecuteEventSelectedCommand(object item)
         {
+            //return item;
             if (item is AdvancedEventModel eventModel)
             {
                 var title = $"{eventModel.Name}";
                 var message = "Начало: " + eventModel.Starting + "\nОписание: " + eventModel.Description;
-                await App.Current.MainPage.DisplayAlert(title, message, "Ok");
+                await App.Current.MainPage.DisplayAlert(title, message, "ок");
                 Console.WriteLine(message);
             }
         }
