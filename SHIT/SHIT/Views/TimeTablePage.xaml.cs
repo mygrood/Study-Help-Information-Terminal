@@ -19,6 +19,8 @@ namespace SHIT.Views
         int dayOfWeekInt;
         System.DayOfWeek day;
 
+        
+
         public TimeTablePage()
         {
             InitializeComponent();
@@ -34,7 +36,8 @@ namespace SHIT.Views
             datefriTT.Text = startweek.AddDays(4).ToLongDateString();
             datesatTT.Text = startweek.AddDays(5).ToLongDateString();
             datesunTT.Text = startweek.AddDays(6).ToLongDateString();
-          
+
+           
 
 
         }
@@ -42,6 +45,8 @@ namespace SHIT.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            int thisSpecialization = Helpers.Settings.Specialization;
 
             switch (dayOfWeekInt)
             {
@@ -116,6 +121,49 @@ namespace SHIT.Views
 
 
             }
+
+            switch (thisSpecialization)
+            {
+                case 1:
+                    lblSpecialization.Text = "Банковское дело";
+                    break;
+                case 2:
+                    lblSpecialization.Text = "Операционная деятельность в логистике";
+                    break;
+                case 3:
+                    lblSpecialization.Text = "Право и организация соц.обеспечения";
+                    break;
+                case 4:
+                    lblSpecialization.Text = "Экономика и бухгалтерский учет";
+                    break;
+                case 5:
+                    lblSpecialization.Text = "Документация и архивоведение";
+                    break;
+                case 6:
+                    lblSpecialization.Text = "Товароведение";
+                    break;
+                case 7:
+                    lblSpecialization.Text = "Прикладная информатика и программирование";
+                    break;
+                case 8:
+                    lblSpecialization.Text = "Коммерция";
+                    break;
+                case 9:
+                    lblSpecialization.Text = "Дошкольное образование";
+                    break;
+                case 10:
+                    lblSpecialization.Text = "Преподавание в начальных классах";
+                    break;
+                case 11:
+                    lblSpecialization.Text = "Музыкальное образование";
+                    break;
+                case 12:
+                    lblSpecialization.Text = "Страховое дело";
+                    break;
+                default:
+                    break;
+            }
+
         }
 
 

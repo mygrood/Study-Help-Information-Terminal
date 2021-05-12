@@ -37,10 +37,15 @@ namespace SHIT.Views.Calendar.Controls
                 General.thisEvent = advancedEventModel;
                 General.isEdit = 1;
                 await Navigation.PushAsync(new EditEventPage());
-            }
-            
+            }           
             
         }
-        
+
+        protected override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            General.OpenEvents();
+        }
+
     }
 }

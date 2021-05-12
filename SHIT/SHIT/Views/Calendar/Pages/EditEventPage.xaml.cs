@@ -22,7 +22,7 @@ namespace SHIT.Views.Calendar.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditEventPage : ContentPage
     {
-
+        DateTime dateTime;
         AdvancedEventModel thisEventEdit;
 
         public EditEventPage()
@@ -42,7 +42,7 @@ namespace SHIT.Views.Calendar.Pages
                 tpTime.Time = thisEventEdit.Starting;
                 entrName.Text = thisEventEdit.Name;
                 entrDescription.Text = thisEventEdit.Description;
-
+                dateTime = thisEventEdit.date;
             }
             
         }
@@ -55,9 +55,16 @@ namespace SHIT.Views.Calendar.Pages
             }
             else
             {
+                AdvancedEventModel newEvent = new AdvancedEventModel()
+                {
+                    Name = entrName.Text,
+                    Description = entrDescription.Text,
+                    date = dpDate.Date,
+                    Starting = tpTime.Time,
+                };
                 try
                 {
-                    addEvent();
+                    addEvent(newEvent);
                 }
                 catch (Exception ex)
                 {
@@ -85,29 +92,43 @@ namespace SHIT.Views.Calendar.Pages
         }
 
 
-        private void addEvent()
+        private void addEvent( AdvancedEventModel eventModel)
         {
             DateTime d = dpDate.Date;
             
 
             if (General.Events.ContainsKey(d))
             {
+              
+               ObservableCollection<AdvancedEventModel> todayEvents;
                 
-                var todayEvents = General.Events[d] as ObservableCollection<AdvancedEventModel>;
-
-                if (todayEvents==null)
+                foreach (var item in General.Events)
                 {
-                    DisplayAlert("какова хуя", "todayEvents==null", "ok");
-                    return;
+                    
+                    if (item.Key==d)
+                    {
+                        AdvancedEventModel[] array;
+                        array = new AdvancedEventModel[item.Value.Count+1];
+                        item.Value.CopyTo( array,0);
+                        
+                        if (array == null)
+                        {
+                            DisplayAlert("какого чёрта", "todayEvents==null", "ok");
+                            return;
+                        }
+                        Console.WriteLine(array.Length);
+                        array[array.Length-1] = eventModel;
+                        General.Events[d] = new ObservableCollection<AdvancedEventModel>(array.ToList());
+                        return;
+                    }
+                    
+
+                  
+
                 }
 
-                todayEvents.Add(new AdvancedEventModel()
-                {
-                    Name = entrName.Text,
-                    Description = entrDescription.Text,
-                    date = dpDate.Date,
-                    Starting = tpTime.Time,
-                });
+
+
 
 
                 //List<AdvancedEventModel> todayEvents = null;
@@ -121,7 +142,7 @@ namespace SHIT.Views.Calendar.Pages
 
 
 
-              
+
 
                 //Dictionary<DateTime, List<AdvancedEventModel>> EvNew = new Dictionary<DateTime, List<AdvancedEventModel>>();
                 //EvNew.Add(d, new List<AdvancedEventModel>() {
@@ -149,12 +170,7 @@ namespace SHIT.Views.Calendar.Pages
             }
             else
             {
-                General.Events.Add(d, new ObservableCollection<AdvancedEventModel>() {
-                    new AdvancedEventModel() {
-                    Name = entrName.Text,
-                    Description = entrDescription.Text,
-                    date = dpDate.Date,
-                    Starting = tpTime.Time, } });
+                General.Events.Add(d, new ObservableCollection<AdvancedEventModel>() { eventModel });
        
                 //var todayEvents = General.Events[d] as List<AdvancedEventModel>;
                 //var ev = new AdvancedEventModel();
@@ -177,10 +193,6 @@ namespace SHIT.Views.Calendar.Pages
                 EventCollection ev = General.Events;
                 ObservableCollection<AdvancedEventModel> aemList = new ObservableCollection<AdvancedEventModel>();
 
-                string Name = entrName.Text;
-                string Description = entrDescription.Text;
-                DateTime date = dpDate.Date;
-                TimeSpan Starting = tpTime.Time;
 
                 AdvancedEventModel newEvent = new AdvancedEventModel()
                 {
@@ -190,36 +202,72 @@ namespace SHIT.Views.Calendar.Pages
                     Starting = tpTime.Time,
                 };
 
-                foreach (var item in ev)
+                foreach (var item in General.Events)
                 {
-                    aemList = (ObservableCollection<AdvancedEventModel>)item.Value;
-                    if (aemList.Contains(thisEventEdit))
+
+                    if (item.Key == dateTime)
                     {
-                        aemList.Remove(thisEventEdit);
-                        aemList.Add(newEvent);
-                    }                    
+                        AdvancedEventModel[] array;
+                        array = new AdvancedEventModel[item.Value.Count + 1];
+                        item.Value.CopyTo(array, 0);
+
+                        if (array == null)
+                        {
+                            DisplayAlert("какого чёрта", "todayEvents==null", "ok");
+                            return;
+                        }
+                        AdvancedEventModel[] newArray = { thisEventEdit};
+                        array = (from x in array where !newArray.Contains(x) select x).ToArray();
+                        Array.Resize(ref array, array.Length - 1);
+                        General.Events[dateTime] = new ObservableCollection<AdvancedEventModel>(array.ToList());
+                        break;
+                    }
                 }
-                General.Events = ev;
-                               
+
+                addEvent(newEvent);
+
+                General.SaveEvents();
+                DisplayAlert("", " Изменения сохранены", "я понял");
+                General.OpenEvents();
+                Navigation.PopAsync();
+
             }
         }
 
-        private void btnDelete_Clicked(object sender, EventArgs e)
+        private async void btnDelete_Clicked(object sender, EventArgs e)
         {
-            EventCollection ev = General.Events;
-            ObservableCollection<AdvancedEventModel> aemList = new ObservableCollection<AdvancedEventModel>();
-
-            
-
-            foreach (var item in ev)
+            bool result = await DisplayAlert("Подтвердить действие", "Вы уверены, что хотите удалить событие?", "Да","Нет");
+            if (result)
             {
-                aemList = (ObservableCollection<AdvancedEventModel>)item.Value;
-                if (aemList.Contains(thisEventEdit))
+                EventCollection ev = General.Events;
+                ObservableCollection<AdvancedEventModel> aemList = new ObservableCollection<AdvancedEventModel>();
+
+                foreach (var item in General.Events)
                 {
-                    aemList.Remove(thisEventEdit);                    
+                    if (item.Key == dateTime)
+                    {
+                        AdvancedEventModel[] array;
+                        array = new AdvancedEventModel[item.Value.Count + 1];
+                        item.Value.CopyTo(array, 0);
+
+                        if (array[0] == null)
+                        {
+                            DisplayAlert("какого чёрта", "todayEvents==null", "ok");
+                            return;
+                        }
+                        AdvancedEventModel[] newArray = { thisEventEdit };
+                        array = (from x in array where !newArray.Contains(x) select x).ToArray();
+                        Array.Resize(ref array, array.Length - 1);
+                        General.Events[dateTime] = new ObservableCollection<AdvancedEventModel>(array.ToList());
+                    }
                 }
+               
+                General.SaveEvents();
+                DisplayAlert("", "Сохранено", "я понял");
+                General.OpenEvents();
+                Navigation.PopAsync();
             }
-            General.Events = ev;
+            
         }
     }
 }

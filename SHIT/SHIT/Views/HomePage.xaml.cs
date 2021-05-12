@@ -25,8 +25,9 @@ namespace SHIT.Views
 
         private void btnAbout_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Информация", "тут должна быть основная информация о колледже: " +
-                "полное и сокращенное название, адрес главного корпуса, имя директора, телефон секретаря", "я понял");
+            Navigation.PushAsync(new AboutPage());
+           // DisplayAlert("Информация", "тут должна быть основная информация о колледже: " +
+           //     "полное и сокращенное название, адрес главного корпуса, имя директора, телефон секретаря", "я понял");
         }
 
         private void btnSpecialization_Clicked(object sender, EventArgs e)

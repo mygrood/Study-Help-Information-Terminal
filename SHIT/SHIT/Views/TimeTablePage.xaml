@@ -9,23 +9,36 @@
 
         <ScrollView x:Name="scrollView" Orientation="Vertical" >
             <StackLayout Spacing="2">
-                <StackLayout Margin="0,10,0,10">
-                    <Label Text="Группа 21БД" 
-                            VerticalOptions="Start" 
-                            HorizontalOptions="CenterAndExpand"                
+                <StackLayout Margin="10,10,10,10">
+                    <Label x:Name="lblGroup"
+                        VerticalOptions="Start" 
+                            HorizontalOptions="CenterAndExpand"    
+                           HorizontalTextAlignment="Center"
                             TextTransform="Uppercase"
                             FontSize="Large"
                             FontFamily="MontBold"                
                             TextColor="DarkRed"
-                            LineBreakMode="NoWrap" />
-                    <Label Text="Банковское дело" Margin="0,0,0,10"
+                            LineBreakMode="NoWrap">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Группа"/>
+                                    <Span Text="groupname"/>
+                                    <!--<Span Text="{Binding Group}"/>-->
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label x:Name="lblSpecialization"
+                        Text="SpecializationName"                        
                             VerticalOptions="Start" 
+                           HorizontalTextAlignment="Center"
                             HorizontalOptions="CenterAndExpand"                
                             TextTransform="Uppercase"
                             FontSize="Medium"
                             FontFamily="MontSemiBold"                
                             TextColor="DarkRed"
-                            LineBreakMode="NoWrap" />
+                            LineBreakMode="WordWrap" />
                 </StackLayout>
 
                 <StackLayout x:Name="monTT" Padding="10">

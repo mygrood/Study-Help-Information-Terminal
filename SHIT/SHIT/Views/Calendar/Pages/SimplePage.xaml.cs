@@ -28,7 +28,7 @@ namespace SHIT.Views.Calendar.Pages
         {            
             
             base.OnAppearing();
-           
+            General.OpenEvents();
 
         }
     }

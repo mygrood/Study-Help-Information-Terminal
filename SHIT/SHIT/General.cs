@@ -52,9 +52,7 @@ namespace SHIT
 
 
         public static void SaveEvents()
-        {
-           
-                        
+        {                              
 
             EventCollection list = Events;
             
@@ -64,10 +62,8 @@ namespace SHIT
             List<AdvancedEventModel> listEv = new List<AdvancedEventModel>();
             foreach (var item in list)
             {
-                
-
-                
-                foreach (AdvancedEventModel t in item.Value)
+                ObservableCollection<AdvancedEventModel> eventModels = SortEvents(item.Value as ObservableCollection<AdvancedEventModel>);                
+                foreach (AdvancedEventModel t in eventModels)
                 {
                     listEv.Add(t);
                     //writer.WriteStartObject();
@@ -123,33 +119,20 @@ namespace SHIT
                     if(!General.Events.Keys.Contains(item.Key))
                         General.Events.Add(item.Key, item.Value);
                 }
-                if (!General.Events.Keys.Contains(DateTime.MinValue))
-                {
-                    General.Events.Add(DateTime.MinValue, new ObservableCollection<AdvancedEventModel>());
-                    var todayEvents = General.Events[DateTime.MinValue] as ObservableCollection<AdvancedEventModel>;
-                    todayEvents.Add(new AdvancedEventModel
-                    {
-                        Name = "please",
-                        Description = "dont delete",
-                        date = DateTime.MinValue,
-                        Starting = new TimeSpan()
-                    });
-                }
+                //if (!General.Events.Keys.Contains(DateTime.MinValue))
+                //{
+                //    General.Events.Add(DateTime.MinValue, new ObservableCollection<AdvancedEventModel>());
+                //    var todayEvents = General.Events[DateTime.MinValue] as ObservableCollection<AdvancedEventModel>;
+                //    todayEvents.Add(new AdvancedEventModel
+                //    {
+                //        Name = "please",
+                //        Description = "dont delete",
+                //        date = DateTime.MinValue,
+                //        Starting = new TimeSpan()
+                //    });
+                //}
                 
-            }
-            else
-            {
-                General.Events.Add(DateTime.MinValue, new ObservableCollection<AdvancedEventModel>());
-                    var todayEvents = General.Events[DateTime.MinValue] as ObservableCollection<AdvancedEventModel>;
-                    todayEvents.Add(new AdvancedEventModel
-                    {
-                        Name = "please",
-                        Description = "dont delete",
-                        date = DateTime.MinValue,
-                        Starting = new TimeSpan()
-                    });
-
-            }
+            }           
         }
         public static void CalendarClear()
         {                       
@@ -158,8 +141,6 @@ namespace SHIT
            
         }
 
-
-
         public static string GetExternalStorage()
         {
             Context context = Android.App.Application.Context;
@@ -167,6 +148,34 @@ namespace SHIT
             return filepath.Path;
         }
 
+        public static ObservableCollection<AdvancedEventModel> SortEvents(ObservableCollection<AdvancedEventModel> ev)
+        {
+            if (ev == null) return ev;
+            AdvancedEventModel[] sortEv = new AdvancedEventModel[ev.Count];
+            for (int i = 0; i < ev.Count; i++)
+            {
+
+                sortEv[i] = ev[i];
+            }             
+            AdvancedEventModel temp;
+            for (int i = 0; i < sortEv.Length; i++)
+            {
+                for (int j = i+1; j < sortEv.Length; j++)
+                {
+                    if (sortEv[i].Starting>sortEv[j].Starting)
+                    {
+                        temp = sortEv[i];
+                        sortEv[i] = sortEv[j];
+                        sortEv[j] = temp;
+                    }
+                }
+            }
+           
+            ObservableCollection<AdvancedEventModel> newEv = new ObservableCollection<AdvancedEventModel>(sortEv.ToList());
+                      
+
+            return newEv;
+        }
     }
 
     

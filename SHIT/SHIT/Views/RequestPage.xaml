@@ -33,6 +33,13 @@
                         ClearButtonVisibility="WhileEditing"/>
             </StackLayout>
             <StackLayout>
+                    <Label Text="ФИО обучающегося" TextColor="Black"
+                       FontFamily="MontSemiBold" FontSize="Medium"/>
+                    <DatePicker x:Name="dpBirthday" 
+                        TextColor="Black"
+                       FontFamily="MontR" FontSize="Medium"/>
+             </StackLayout>
+                <StackLayout>
                 <Label Text="Основание" TextColor="Black"
                        FontFamily="MontSemiBold" FontSize="Medium"/>
                 <Entry x:Name="entrWhy" Keyboard="Text" Placeholder="По требованию" 

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lessons="clr-namespace:SHIT.ViewModels"
+             
+             x:Class="SHIT.Views.DayPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10" >
+            <Label         VerticalOptions="Start" 
+                            HorizontalOptions="CenterAndExpand"    
+                           HorizontalTextAlignment="Center"
+                            TextTransform="Uppercase"
+                            FontSize="Large"
+                            FontFamily="MontBold"                
+                            TextColor="DarkRed"
+                            LineBreakMode="NoWrap">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Расписание на "/>
+                            <Span x:Name="lblDay" Text="day"/>
+                            <!--<Span Text="{Binding Group}"/>-->
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <lessons:LessonPage/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

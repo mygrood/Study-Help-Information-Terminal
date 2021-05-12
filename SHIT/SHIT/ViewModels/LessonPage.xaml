@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHIT.ViewModels.LessonPage">
+    <StackLayout  x:Name="stl"
+            Padding="15,0,0,0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" 
+                  Orientation="Horizontal">
+        <StackLayout Orientation="Vertical">
+            <Label Text="starting"  TextColor="Black" />
+            <Label Text=" - " />
+            <Label Text="end" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical">
+            <Label Text="subject"/>
+            <Label Text="teacher" FontSize="Small" LineBreakMode="WordWrap"  />
+        </StackLayout>    
+       
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+</ContentView>

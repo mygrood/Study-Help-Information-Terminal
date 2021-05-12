@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using Xamarin.Plugin.Calendar.Models;
 using Android;
 using Plugin.Permissions;
+using SHIT.Views;
 
 namespace SHIT
 {
@@ -22,15 +23,26 @@ namespace SHIT
         public Account acc = new Account { Username = "user" };
         public App()
         {
+            Console.WriteLine( General.folderPath);   
             
             General.Events = new EventCollection();
-            General.OpenEvents();            
+            General.OpenEvents();
+
+            int specialKey = Helpers.Settings.Specialization;
+                
             InitializeComponent();     
+                        
+
+            if (specialKey==0)
+            {
+                MainPage = new SpecializationPage();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new MainPage()) { BarBackgroundColor=Color.DarkRed}; 
+            }
             
-            Console.WriteLine( General.folderPath);
-            
-            
-            MainPage = new NavigationPage(new MainPage()) { BarBackgroundColor=Color.DarkRed}; 
+           
 
         }
 
