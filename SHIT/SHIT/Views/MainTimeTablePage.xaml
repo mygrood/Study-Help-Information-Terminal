@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             
-             x:Class="SHIT.Views.TimeTablePage"
+             x:Class="SHIT.Views.MainTimeTablePage"
              Title="Расписание">
     <ContentPage.Content>
-
 
         <ScrollView x:Name="scrollView" Orientation="Vertical" >
             <StackLayout Spacing="2">
@@ -23,8 +21,8 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="Группа "/>
-                                    <Span x:Name="lblGroup" Text="31П"/>
-                                    <!--<Span Text="{Binding Group}"/>-->
+                                    <Span x:Name="lblGroup" Text="groupname"/>
+
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -39,104 +37,13 @@
                             FontFamily="MontSemiBold"                
                             TextColor="DarkRed"
                             LineBreakMode="WordWrap" />
-                    
+
                     <StackLayout Margin="0,5,0,5" HeightRequest="2" BackgroundColor="DarkRed"/>
-                    
-                    <Grid
-                        Margin="0,2"
-                        Padding="0"
-                        HorizontalOptions="FillAndExpand"
-                        IsVisible="{Binding ShowMonthPicker}"
-                        VerticalOptions="Start">    
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="3*" />
-                            <ColumnDefinition Width="1*" />
-                        </Grid.ColumnDefinitions>
-
-                        <Frame   
-                            Padding="0"
-                            BackgroundColor="White"
-                            BorderColor="DarkRed"
-                            CornerRadius="18"
-                            HasShadow="False"
-                            HeightRequest="36"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="Center"
-                            WidthRequest="36">
-                            <Label
-                                FontAttributes="Bold"
-                                FontFamily="{StaticResource FontAwesomeSolid}"
-                                FontSize="25"
-                                HorizontalOptions="CenterAndExpand"
-                                HorizontalTextAlignment="Center"
-                                InputTransparent="True"
-                                Text="&#xf060;"
-                                TextColor="DarkRed"
-                                VerticalOptions="CenterAndExpand"
-                                VerticalTextAlignment="Center" />
-                            
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer x:Name="btnLastWeek" Tapped="btnLastWeek_Clicked"/>
-                            </Frame.GestureRecognizers>
-
-                        </Frame>
-
-                        <Button x:Name="btnMainTimeTable" Text="без изменений"     
-                                Clicked="btnMainTimeTable_Clicked"
-                            Grid.Column="1"
-                            FontAttributes="Bold"                            
-                            HorizontalOptions="Center"                            
-                            VerticalOptions="Center"
-                            BackgroundColor="White" BorderColor="DarkRed" BorderWidth="2"
-                    TextColor="DarkRed" FontFamily="MontBold"  TextTransform="Uppercase" FontSize="Medium"/>
-
-
-                        <Frame            
-                            Grid.Column="2"
-                            Padding="0"
-                            BackgroundColor="White"
-                            BorderColor="DarkRed"
-                            CornerRadius="18"
-                            HasShadow="False"
-                            HeightRequest="36"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand"
-                            WidthRequest="36">
-                            <Label
-                                FontAttributes="Bold"
-                                FontFamily="{StaticResource FontAwesomeSolid}"
-                                FontSize="25"
-                                TextColor="DarkRed"
-                                HorizontalOptions="CenterAndExpand"
-                                HorizontalTextAlignment="Center"
-                                InputTransparent="True"
-                                Text="&#xf061;"
-                                
-                                VerticalOptions="CenterAndExpand"
-                                VerticalTextAlignment="Center" />
-
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer x:Name="btnNextWeek" Tapped="btnNextWeek_Clicked"/>
-                            </Frame.GestureRecognizers>
-
-                        </Frame>
-                    </Grid>
-                    <Label x:Name="lblWeek"
-                        Text="Верхняя неделя"                        
-                            VerticalOptions="Start" 
-                           HorizontalTextAlignment="Center"
-                            HorizontalOptions="CenterAndExpand"                
-                            TextTransform="Uppercase"
-                            FontSize="Medium"
-                            FontFamily="MontSemiBold"                
-                            TextColor="DarkRed"
-                            LineBreakMode="WordWrap" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Switch x:Name="swIsTop" IsToggled="True" Toggled="swIsTop_Toggled"/>
+                        <Label x:Name="swLbl" Text="Верхняя неделя" Style="{StaticResource Key='lblLesson'}"/>
+                    </StackLayout>
                 </StackLayout>
-
                 <StackLayout x:Name="monTT" Padding="10" HeightRequest="400">
                     <Frame Style="{StaticResource Key='todayTTBorder'}" >
                         <StackLayout>
@@ -150,16 +57,7 @@
                                                     HorizontalOptions="Center"                                                                                               
                                                     TextColor="DarkRed"
                                                LineBreakMode="NoWrap"/>
-                                    <Label x:Name="datemonTT" Text="datetoday" 
-                                                    TextTransform="Uppercase"
-                                                   FontAttributes="Bold"
-                                                    FontFamily="MontItalic"
-                                                    FontSize="Large"
-                                                    HorizontalOptions="Center"                                                                                               
-                                                    TextColor="DarkRed"
-                                               LineBreakMode="NoWrap"/>
                                 </StackLayout>
-
                             </Frame>
                             <Label x:Name="noLMon" Text="Занятий нет" IsVisible="false"
                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
@@ -179,7 +77,7 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="auto" />
                                                     <ColumnDefinition Width="auto" />
-                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />                                                   
                                                 </Grid.ColumnDefinitions>
                                                 <Label Text="{Binding start_time}" Grid.Column="0" WidthRequest="60"
                                                        Style="{StaticResource Key='lblLesson'}"/>
@@ -187,7 +85,15 @@
                                                 <Label Text="{Binding subject}" Grid.Column="2"
                                                        Style="{StaticResource Key='lblLesson'}"/>
                                             </Grid>
-                                           
+                                            <!--<Label Style="{StaticResource Key='lblLesson'}">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding start_time}"  />
+                                                        <Span Text=" - " />
+                                                        <Span Text="{Binding subject}" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>-->
                                         </ViewCell>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -211,16 +117,7 @@
                                                     HorizontalOptions="Center"                                                                                               
                                                     TextColor="DarkRed"
                                                LineBreakMode="NoWrap"/>
-                                    <Label x:Name="datetueTT" Text="datetoday" 
-                                                    TextTransform="Uppercase"
-                                                   FontAttributes="Bold"
-                                                    FontFamily="MontItalic"
-                                                    FontSize="Large"
-                                                    HorizontalOptions="Center"                                                                                               
-                                                    TextColor="DarkRed"
-                                               LineBreakMode="NoWrap"/>
                                 </StackLayout>
-
                             </Frame>
                             <Label x:Name="noLTue" Text="Занятий нет" IsVisible="false"
                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
@@ -247,7 +144,7 @@
                                                 <StackLayout BackgroundColor="DarkRed" WidthRequest="1" Grid.Column="1"  />
                                                 <Label Text="{Binding subject}" Grid.Column="2"
                                                        Style="{StaticResource Key='lblLesson'}"/>
-                                            </Grid>
+                                            </Grid>                                            
                                         </ViewCell>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -272,16 +169,7 @@
                                                     HorizontalOptions="Center"                                                                                               
                                                     TextColor="DarkRed"
                                                LineBreakMode="NoWrap"/>
-                                    <Label x:Name="datewedTT" Text="datetoday" 
-                                                    TextTransform="Uppercase"
-                                                   FontAttributes="Bold"
-                                                    FontFamily="MontItalic"
-                                                    FontSize="Large"
-                                                    HorizontalOptions="Center"                                                                                               
-                                                    TextColor="DarkRed"
-                                               LineBreakMode="NoWrap"/>
                                 </StackLayout>
-
                             </Frame>
                             <Label x:Name="noLWed" Text="Занятий нет" IsVisible="false"
                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
@@ -328,14 +216,6 @@
                                                     TextTransform="Uppercase"
                                                    FontAttributes="Bold"
                                                     FontFamily="MontBold"
-                                                    FontSize="Large"
-                                                    HorizontalOptions="Center"                                                                                               
-                                                    TextColor="DarkRed"
-                                               LineBreakMode="NoWrap"/>
-                                    <Label x:Name="datethuTT" Text="datetoday" 
-                                                    TextTransform="Uppercase"
-                                                   FontAttributes="Bold"
-                                                    FontFamily="MontItalic"
                                                     FontSize="Large"
                                                     HorizontalOptions="Center"                                                                                               
                                                     TextColor="DarkRed"
@@ -392,14 +272,6 @@
                                                     HorizontalOptions="Center"                                                                                               
                                                     TextColor="DarkRed"
                                                LineBreakMode="NoWrap"/>
-                                    <Label x:Name="datefriTT" Text="datetoday" 
-                                                    TextTransform="Uppercase"
-                                                   FontAttributes="Bold"
-                                                    FontFamily="MontItalic"
-                                                    FontSize="Large"
-                                                    HorizontalOptions="Center"                                                                                               
-                                                    TextColor="DarkRed"
-                                               LineBreakMode="NoWrap"/>
                                 </StackLayout>
 
                             </Frame>
@@ -439,7 +311,7 @@
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
-                <StackLayout x:Name="satTT" Padding="10" HeightRequest="400">
+                <StackLayout x:Name="satTT" Padding="10" HeightRequest="400"> 
                     <Frame Style="{StaticResource Key='todayTTBorder'}" >
                         <StackLayout>
                             <Frame x:Name="titlesatTT" Style="{StaticResource Key='otherTTTitle'}">
@@ -448,14 +320,6 @@
                                                     TextTransform="Uppercase"
                                                    FontAttributes="Bold"
                                                     FontFamily="MontBold"
-                                                    FontSize="Large"
-                                                    HorizontalOptions="Center"                                                                                               
-                                                    TextColor="DarkRed"
-                                               LineBreakMode="NoWrap"/>
-                                    <Label x:Name="datesatTT" Text="datetoday" 
-                                                    TextTransform="Uppercase"
-                                                   FontAttributes="Bold"
-                                                    FontFamily="MontItalic"
                                                     FontSize="Large"
                                                     HorizontalOptions="Center"                                                                                               
                                                     TextColor="DarkRed"
@@ -513,14 +377,6 @@
                                                     HorizontalOptions="Center"                                                                                               
                                                     TextColor="DarkRed"
                                                LineBreakMode="NoWrap"/>
-                                    <Label x:Name="datesunTT" Text="datetoday" 
-                                                    TextTransform="Uppercase"
-                                                   FontAttributes="Bold"
-                                                    FontFamily="MontItalic"
-                                                    FontSize="Large"
-                                                    HorizontalOptions="Center"                                                                                               
-                                                    TextColor="DarkRed"
-                                               LineBreakMode="NoWrap"/>
                                 </StackLayout>
 
                             </Frame>
@@ -554,6 +410,7 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
+                            
                         </StackLayout>
                     </Frame>
                     <StackLayout.GestureRecognizers>
@@ -584,6 +441,7 @@
             </Style>
             <Style x:Key="lblLesson" TargetType="Label">
                 <!--FontSize="Medium" FontFamily="MontR" TextColor="Black"-->
+                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
                 <Setter Property="HorizontalTextAlignment" Value="Start"/>
                 <Setter Property="LineBreakMode" Value="TailTruncation"/>
                 <Setter Property="FontSize" Value="Medium"/>
@@ -593,5 +451,3 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 </ContentPage>
-    
-   

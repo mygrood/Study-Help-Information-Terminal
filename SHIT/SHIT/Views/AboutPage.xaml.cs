@@ -20,7 +20,7 @@ namespace SHIT.Views
 
         private async void phone_Tapped(object sender, EventArgs e)
         {
-            bool result = await DisplayAlert("Подтвердить действие", "Вы уверены, что хотите удалить событие?", "Да", "Нет");
+            bool result = await DisplayAlert("Подтвердить действие", "Позвонить?", "Да", "Нет");
             if (result)
             {
                 var source = (Label)sender;

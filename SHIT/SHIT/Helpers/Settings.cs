@@ -55,21 +55,41 @@ namespace SHIT.Helpers
 
         #region Setting Constants
 
-        private const string GroupKey = "GroupKey";
-        private static string  GroupDefault = string.Empty;
+        private const string GroupNameKey = "GroupNameKey";
+        private static string  GroupNameDefault = string.Empty;
 
         #endregion
 
 
-        public static string Group
+        public static string GroupName
         {
             get
             {
-                return AppSettings.GetValueOrDefault(GroupKey, GroupDefault);
+                return AppSettings.GetValueOrDefault(GroupNameKey, GroupNameDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(GroupKey, value);
+                AppSettings.AddOrUpdateValue(GroupNameKey, value);
+            }
+        }
+
+        #region Setting Constants
+
+        private const string GroupIdKey = "GroupIdKey";
+        private static int GroupIdDefault = 0;
+
+        #endregion
+
+
+        public static int GroupId
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(GroupIdKey, GroupIdDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(GroupIdKey, value);
             }
         }
     }

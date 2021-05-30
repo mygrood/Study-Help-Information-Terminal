@@ -19,9 +19,9 @@
                     Style="{StaticResource btnMainStyle}" />
                 <Button x:Name="btnTeachers" Text="Преподаватели"  Clicked="btnTeachers_Clicked"
                     Style="{StaticResource btnMainStyle}"/>
-                <Button x:Name="btnAllLessons" Text="Список уроков"  Clicked="btnAllLessons_Clicked"
+                <Button x:Name="btnAllLessons" Text="Кружки и секции"  Clicked="btnAllLessons_Clicked"
                     Style="{StaticResource btnMainStyle}"/>
-                <Button x:Name="btnRequest"  Text="Заказать справку" Clicked="btnRequest_Clicked"
+                <Button x:Name="btnReceipt"  Text="Заказать справку" Clicked="btnReceipt_Clicked"
                     CornerRadius="50" BackgroundColor="White" BorderColor="DarkRed" BorderWidth="5"
                     TextColor="DarkRed" FontFamily="MontBold"  TextTransform="None" FontSize="Medium"/>
 

@@ -5,34 +5,255 @@
              
              x:Class="SHIT.Views.DayPage">
     <ContentPage.Content>
-        <StackLayout Padding="10" >
-            <Label         VerticalOptions="Start" 
+        
+            <StackLayout Padding="10">
+                <Label x:Name="lblTopWeek" Text="Верхняя неделя" Margin="0,5,0,5"
+                       VerticalOptions="Center" 
                             HorizontalOptions="CenterAndExpand"    
                            HorizontalTextAlignment="Center"
                             TextTransform="Uppercase"
                             FontSize="Large"
                             FontFamily="MontBold"                
                             TextColor="DarkRed"
-                            LineBreakMode="NoWrap">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <FormattedString.Spans>
-                            <Span Text="Расписание на "/>
-                            <Span x:Name="lblDay" Text="day"/>
-                            <!--<Span Text="{Binding Group}"/>-->
-                        </FormattedString.Spans>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <ListView>
+                            LineBreakMode="NoWrap"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                    <Label x:Name="lblDay" Text="без изменений" 
+                           Grid.Column="0"
+                            VerticalOptions="Start" 
+                            HorizontalOptions="Start"    
+                           HorizontalTextAlignment="Center"
+                            TextTransform="Uppercase"
+                            FontSize="Medium"
+                            FontFamily="MontBold"                
+                            TextColor="DarkRed"
+                            LineBreakMode="NoWrap"/>
+                    <Label x:Name="lblDayOfWeek" Text="dayOfWeek" 
+                           Grid.Column="1"
+                            VerticalOptions="Start" 
+                            HorizontalOptions="End"
+                           HorizontalTextAlignment="End"                             
+                            TextTransform="Uppercase"
+                            FontSize="Medium"
+                            FontFamily="MontBold"                
+                            TextColor="DarkRed"
+                            LineBreakMode="NoWrap"/>
+                </Grid>
+
+                <ListView x:Name="dayTT" Margin="10"  HasUnevenRows="True" SelectionMode="None" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Always">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Frame HasShadow="True" >
+                                      <Grid >
+                                        <Grid.RowDefinitions>
+                                            <!--<RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />-->
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout Grid.Row="0">
+                                            <Label  FontFamily="MontSemiBold" FontSize="Large"
+                                           Style="{StaticResource Key='lblLesson'}">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span x:Name="lblStartLesson1"
+                                                        Text="{Binding start_time}" />
+                                                        <Span Text=" - "/>
+                                                        <Span x:Name="lblEndLesson1"
+                                                      Text="{Binding end_time}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
+                                        </StackLayout>
+                                        <Label Text="{Binding subject}" 
+                                            Grid.Row="1"
+                                       FontFamily="MontBold"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                                        <Label Text="{Binding teacher}" 
+                                            Grid.Row="2"
+                                   FontSize="Body"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                                        <Label Grid.Row="3" FontSize="Small" TextTransform="Uppercase"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Кабинет "/>
+                                                    <Span Text="{Binding classroom}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                    </Grid>
+                               
+                                </Frame>    
+                              
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <!--<Frame HasShadow="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackLayout Grid.Row="0">
+                                <Label  FontFamily="MontSemiBold" FontSize="Large"
+                                           Style="{StaticResource Key='lblLesson'}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span x:Name="lblStartLesson2"
+                                                        Text="Start" />
+                                            <Span Text=" - "/>
+                                            <Span x:Name="lblEndLesson2"
+                                                      Text="End"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                            </StackLayout>
+                            <Label Text="МДК 01.03 Разработка мобильных приложений" 
+                                            Grid.Row="1"
+                                       FontFamily="MontBold"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                            <Label Text="Полетаева Марина Викторовна" 
+                                            Grid.Row="2"
+                                   FontSize="Body"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                            <Label Grid.Row="3" FontSize="Small" TextTransform="Uppercase"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Кабинет "/>
+                                        <Span Text="103"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </Grid>
+                    </Frame>
+                    <Frame HasShadow="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackLayout Grid.Row="0">
+                                <Label  FontFamily="MontSemiBold" FontSize="Large"
+                                           Style="{StaticResource Key='lblLesson'}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span x:Name="lblStartLesson3"
+                                                        Text="Start" />
+                                            <Span Text=" - "/>
+                                            <Span x:Name="lblEndLesson3"
+                                                      Text="End"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                            </StackLayout>
+                            <Label Text="МДК 01.01 Разработка программных модулей" 
+                                            Grid.Row="1"
+                                       FontFamily="MontBold"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                            <Label Text="Мухин Николай Александрович" 
+                                            Grid.Row="2"
+                                   FontSize="Body"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                            <Label Grid.Row="3" FontSize="Small" TextTransform="Uppercase"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Кабинет "/>
+                                        <Span Text="105"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </Grid>
+                    </Frame>-->
+                </ListView>
+                <Label x:Name="dayNoTT"  
+                       IsVisible="False"
+                       TextTransform="Uppercase"
+                       FontAttributes="Bold"
+                       FontFamily="MontBold"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       TextColor="Black"
+                       Text="занятий нет" />
+
+                <!--<ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <lessons:LessonPage/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
 
-        </StackLayout>
+            </StackLayout>
+        
 
     </ContentPage.Content>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="todayTTBorder" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+            <Style x:Key="todayTTTitle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BackgroundColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+
+            <Style x:Key="otherTTTitle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+            <Style x:Key="lblLesson" TargetType="Label">
+                <!--FontSize="Medium" FontFamily="MontR" TextColor="Black"-->
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="MontR"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
 </ContentPage>

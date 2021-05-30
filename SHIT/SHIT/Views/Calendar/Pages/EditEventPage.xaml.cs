@@ -247,7 +247,7 @@ namespace SHIT.Views.Calendar.Pages
                     if (item.Key == dateTime)
                     {
                         AdvancedEventModel[] array;
-                        array = new AdvancedEventModel[item.Value.Count + 1];
+                        array = new AdvancedEventModel[item.Value.Count];
                         item.Value.CopyTo(array, 0);
 
                         if (array[0] == null)
@@ -257,8 +257,9 @@ namespace SHIT.Views.Calendar.Pages
                         }
                         AdvancedEventModel[] newArray = { thisEventEdit };
                         array = (from x in array where !newArray.Contains(x) select x).ToArray();
-                        Array.Resize(ref array, array.Length - 1);
+                        //Array.Resize(ref array, array.Length - 1);
                         General.Events[dateTime] = new ObservableCollection<AdvancedEventModel>(array.ToList());
+                        break;
                     }
                 }
                

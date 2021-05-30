@@ -26,7 +26,7 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 1;
                 Helpers.Settings.Specialization = 1;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
             }
             else
             {
@@ -42,12 +42,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 2;
                 Helpers.Settings.Specialization = 2;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 2;
                 Helpers.Settings.Specialization = 2;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -57,12 +59,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 3;
                 Helpers.Settings.Specialization = 3;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 3;
                 Helpers.Settings.Specialization = 3;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -72,12 +76,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 4;
                 Helpers.Settings.Specialization = 4;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 4;
                 Helpers.Settings.Specialization = 4;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -87,12 +93,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 5;
                 Helpers.Settings.Specialization = 5;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 5;
                 Helpers.Settings.Specialization = 5;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -102,12 +110,15 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 6;
                 Helpers.Settings.Specialization = 6;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
+
             }
             else
             {
                 General.thisSpecialisation = 6;
                 Helpers.Settings.Specialization = 6;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -117,12 +128,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 7;
                 Helpers.Settings.Specialization = 7;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 7;
                 Helpers.Settings.Specialization = 7;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -132,12 +145,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 8;
                 Helpers.Settings.Specialization = 8;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 8;
                 Helpers.Settings.Specialization = 8;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -147,12 +162,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 9;
                 Helpers.Settings.Specialization = 9;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 9;
                 Helpers.Settings.Specialization = 9;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -162,12 +179,13 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 10;
                 Helpers.Settings.Specialization = 10;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 10;
                 Helpers.Settings.Specialization = 10;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -177,12 +195,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 11;
                 Helpers.Settings.Specialization = 11;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 11;
                 Helpers.Settings.Specialization = 11;
+                Navigation.PushAsync(new GroupPage());
             }
         }
 
@@ -192,12 +212,14 @@ namespace SHIT.Views
             {
                 General.thisSpecialisation = 12;
                 Helpers.Settings.Specialization = 12;
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                //Navigation.PushAsync(new NavigationPage(new MainPage()) { BarBackgroundColor = Color.DarkRed });
+                Navigation.PushAsync(new GroupPage());
             }
             else
             {
                 General.thisSpecialisation = 12;
                 Helpers.Settings.Specialization = 12;
+                Navigation.PushAsync(new GroupPage());
             }
         }
     }

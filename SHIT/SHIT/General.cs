@@ -15,6 +15,8 @@ namespace SHIT
 
     public class General
     {
+        public const string ApiUrl = "http://student.ngknn.ru:8001/api/";
+        public const string dateFormat = "yyyy-MM-d";
 
         public static bool storagePerm = false;
         public static EventCollection Events { get; set; }

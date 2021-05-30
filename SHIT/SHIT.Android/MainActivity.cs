@@ -7,17 +7,19 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using Android.Support.V4.Content;
-using Android.Support.V4.App;
+
+
+
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+using Xfx;
 
 namespace SHIT.Droid
 {
     [Activity(Label = "SHIT", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        private const int myPermissionsRequestStorage = 100;
+        private const int myPermissionsReceiptStorage = 100;
 
         
         protected override void OnStart()
@@ -34,7 +36,7 @@ namespace SHIT.Droid
 
             base.OnCreate(savedInstanceState);
 
-            int requestPerm=0;
+            int ReceiptPerm=0;
             string storagePerm = Android.Manifest.Permission_group.Storage;
 
 
@@ -45,14 +47,15 @@ namespace SHIT.Droid
             
             Rg.Plugins.Popup.Popup.Init(this);
 
+            XfxControls.Init();
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int RequestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            PermissionsImplementation.Current.OnRequestPermissionsResult(RequestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(RequestCode, permissions, grantResults);
         }
     }
 }

@@ -50,7 +50,7 @@
                         <StackLayout>
                             <Label Style="{StaticResource Key='lblTitle'}" HorizontalOptions="Center"
                                Text="1 Корпус" />
-                            <Image Source="1korpus.jpg"/>
+                            <Image Style="{StaticResource Key='image'}" Source="korpus1.jpg"/>
                             <Label Style="{StaticResource Key='lblMain'}" HorizontalOptions="Center" 
                             Text="603116, г. Нижний Новгород, ул. Московское шоссе, д.1"/>
                             <Label Style="{StaticResource Key='lblMain'}" TextColor="DarkGreen" HorizontalOptions="Center"
@@ -65,7 +65,7 @@
                         <StackLayout>
                             <Label Style="{StaticResource Key='lblTitle'}" HorizontalOptions="Center"
                                Text="2 Корпус" />
-                            <Image Source="2korpus.jpg"/>
+                            <Image  Style="{StaticResource Key='image'}" Source="korpus2.jpg"/>
                             <Label Style="{StaticResource Key='lblMain'}" HorizontalOptions="Center" 
                             Text="603116, г. Нижний Новгород, ул. Московское шоссе, д.52а"/>
                             <Label Style="{StaticResource Key='lblMain'}" TextColor="DarkGreen" HorizontalOptions="Center"
@@ -80,7 +80,7 @@
                         <StackLayout>
                             <Label Style="{StaticResource Key='lblTitle'}" HorizontalOptions="Center"
                                Text="3 Корпус" />
-                            <Image  Source="3korpus.jpg"/>
+                            <Image Style="{StaticResource Key='image'}" Source="korpus3.jpg"/>
                             <Label Style="{StaticResource Key='lblMain'}" HorizontalOptions="Center" 
                             Text="603059, г.Нижний Новгород, ул.Витебская, 41"/>
                             <Label Style="{StaticResource Key='lblMain'}" TextColor="DarkGreen" HorizontalOptions="Center"
@@ -95,7 +95,7 @@
                         <StackLayout>
                             <Label Style="{StaticResource Key='lblTitle'}" HorizontalOptions="Center"
                                Text="Общежитие" />
-                            <Image  Source="4hostel.jpg"/>
+                            <Image Style="{StaticResource Key='image'}" Source="korpus4.jpg"/>
                             <Label Style="{StaticResource Key='lblMain'}" HorizontalOptions="Center" 
                             Text="Заведующий общежитием: Хакимова Талия Саитовна"/>
                             <Label Style="{StaticResource Key='lblMain'}" HorizontalOptions="Center" 
@@ -133,6 +133,14 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="TextTransform" Value="Default"/>
                 <Setter Property="LineBreakMode" Value="WordWrap"/>
+            </Style>
+            <!--HorizontalOptions="Center" Aspect="AspectFit" BackgroundColor="Transparent"-->
+            <Style x:Key="image" TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <!--<Setter Property="WidthRequest" Value="50"/>-->
+                <Setter Property="Margin" Value="10"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>

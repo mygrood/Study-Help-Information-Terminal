@@ -17,9 +17,9 @@ namespace SHIT.Views
             InitializeComponent();
         }
 
-        private async void btnRequest_Clicked(object sender, EventArgs e)
+        private async void btnReceipt_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RequestPage());
+            await Navigation.PushAsync(new ReceiptPage());
 
         }
 
@@ -37,7 +37,7 @@ namespace SHIT.Views
 
         private void btnTeachers_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new GroupPage());
         }
 
         private void btnAllLessons_Clicked(object sender, EventArgs e)

@@ -35,7 +35,7 @@ namespace SHIT
 
             if (specialKey==0)
             {
-                MainPage = new SpecializationPage();
+                MainPage = new NavigationPage(new SpecializationPage());
             }
             else
             {

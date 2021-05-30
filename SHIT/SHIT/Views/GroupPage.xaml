@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHIT.Views.GroupPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Выберите группу" Margin="0,0,0,10"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"                
+                TextTransform="Uppercase"
+                FontSize="Large"
+                FontFamily="MontBold"                
+                TextColor="DarkRed"
+                LineBreakMode="NoWrap"/>
+            <ListView x:Name="lvGroup" Header="" HasUnevenRows="True" SeparatorColor="DarkGray" ItemTapped="lvGroup_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="12">
+                                <Label x:Name="lblGroup" Text="{Binding name}" TextColor="Black"
+                               FontAttributes="Bold" FontSize="Medium" FontFamily="MontSemiBold"/>
+                            </Grid>                            
+                        </ViewCell>                       
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,8 +1,11 @@
 ﻿using Newtonsoft.Json;
+using SHIT.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Auth;
@@ -21,7 +24,7 @@ namespace SHIT
 
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            
+
 
         }
     }
