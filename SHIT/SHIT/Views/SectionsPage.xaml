@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHIT.Views.SectionsPage"
+             Title="Кружки и секции">
+    <ContentPage.Content>
+
+        <ListView x:Name="lvS" Margin="10"  HasUnevenRows="True" SelectionMode="None" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Always">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <Frame HasShadow="True" >
+                            <Grid>
+                                <Grid.RowDefinitions>                                   
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>                                    
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.RowSpan="2" Grid.Column="0"
+                                    Aspect="AspectFit" Source="{Binding image}"/>
+                                
+                                <Label Text="{Binding name}" 
+                                            Grid.Row="0" Grid.Column="1"
+                                       FontFamily="MontBold"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                                <Label Text="Перейти на сайт" 
+                                            Grid.Row="1" Grid.Column="1"
+                                            FontSize="Body"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                                <Label Text="{Binding url}" IsVisible="true" TextColor="Transparent"
+                                            Grid.Row="1" Grid.Column="1" LineBreakMode="TailTruncation"
+                                            FontSize="Body"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                
+
+                            </Grid>
+
+                        </Frame>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+           
+        </ListView>
+
+    </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="todayTTBorder" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+            <Style x:Key="todayTTTitle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BackgroundColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+
+            <Style x:Key="otherTTTitle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+            <Style x:Key="lblLesson" TargetType="Label">
+                <!--FontSize="Medium" FontFamily="MontR" TextColor="Black"-->
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="MontR"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+</ContentPage>

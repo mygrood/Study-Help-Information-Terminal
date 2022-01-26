@@ -126,7 +126,7 @@ namespace SHIT.Views.Calendar.PageModels
         private static async Task DayTapped(DateTime date)
         {
             var message = $"Касание по дате: {date}";
-            await App.Current.MainPage.DisplayAlert("День", message, "Ок");
+            //await App.Current.MainPage.DisplayAlert("День", message, "Ок");
             Console.WriteLine(message);
         }
 

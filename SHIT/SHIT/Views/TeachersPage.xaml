@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHIT.Views.TeachersPage"
+             Title="Преподаватели">
+    <ContentPage.Content>
+
+        <ListView x:Name="lvT" Margin="10"  HasUnevenRows="True" SelectionMode="None" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Always">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <Frame HasShadow="True" >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>                                
+
+                                <Label Text="{Binding name}" 
+                                            Grid.Row="0" 
+                                       FontFamily="MontBold"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}"/>
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="Связаться: " LineBreakMode="TailTruncation"
+                                            FontSize="Body"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}">                                    
+                                </Label>
+                                    <Label Text="email2345@gmail.com" 
+                                            LineBreakMode="TailTruncation"
+                                            FontSize="Body"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <!--<Label Text="{Binding email}" 
+                                            LineBreakMode="TailTruncation"
+                                            FontSize="Body"
+                                            VerticalOptions="CenterAndExpand"
+                                        Style="{StaticResource Key='lblLesson'}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>-->
+
+                                </StackLayout>
+                                
+
+                            </Grid>
+
+                        </Frame>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="todayTTBorder" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+            <Style x:Key="todayTTTitle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BackgroundColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+
+            <Style x:Key="otherTTTitle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="DarkRed"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+            <Style x:Key="lblLesson" TargetType="Label">
+                <!--FontSize="Medium" FontFamily="MontR" TextColor="Black"-->
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="MontR"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

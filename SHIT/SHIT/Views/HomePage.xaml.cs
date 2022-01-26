@@ -37,12 +37,13 @@ namespace SHIT.Views
 
         private void btnTeachers_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new GroupPage());
+            Navigation.PushAsync(new TeachersPage());
         }
 
-        private void btnAllLessons_Clicked(object sender, EventArgs e)
+        
+        private void btnSections_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new SectionsPage());
         }
     }
 }

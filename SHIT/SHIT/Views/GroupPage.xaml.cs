@@ -51,7 +51,7 @@ namespace SHIT.Views
 
             catch (Exception ex)
             {
-                DisplayAlert("ex", ex.Message, "ok");
+                //DisplayAlert("ex", ex.Message, "ok");
                 DisplayAlert("ex", "Ошибка подключения к серверу", "ok");
                 return groups;
 
@@ -63,7 +63,7 @@ namespace SHIT.Views
         private void lvGroup_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Group g = (Group)e.Item;
-            DisplayAlert(g.id.ToString(), g.name, "oj");
+            //DisplayAlert(g.id.ToString(), g.name, "oj");
             int idG = g.id;
 
             int i = Helpers.Settings.GroupId;

@@ -15,11 +15,11 @@
                 
             </ImageButton>
             <StackLayout Grid.Row="1">
-                <Button x:Name="btnSpecialization" Text="Специальности" Clicked="btnSpecialization_Clicked"
+                <Button x:Name="btnSpecialization" Text="Сменить группу" Clicked="btnSpecialization_Clicked"
                     Style="{StaticResource btnMainStyle}" />
                 <Button x:Name="btnTeachers" Text="Преподаватели"  Clicked="btnTeachers_Clicked"
                     Style="{StaticResource btnMainStyle}"/>
-                <Button x:Name="btnAllLessons" Text="Кружки и секции"  Clicked="btnAllLessons_Clicked"
+                <Button x:Name="btnSections" Text="Кружки и секции"  Clicked="btnSections_Clicked"
                     Style="{StaticResource btnMainStyle}"/>
                 <Button x:Name="btnReceipt"  Text="Заказать справку" Clicked="btnReceipt_Clicked"
                     CornerRadius="50" BackgroundColor="White" BorderColor="DarkRed" BorderWidth="5"

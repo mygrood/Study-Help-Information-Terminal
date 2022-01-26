@@ -68,7 +68,7 @@ namespace SHIT.Views
                 {
                     var result = streamReader.ReadToEnd();
 
-                    DisplayAlert("", result, "ok");                     
+                    //DisplayAlert("", result, "ok");                     
                 }
 
                 DisplayAlert("Заявка принята", "Справка будет готова через 3-5 дней", "я понял");
@@ -107,7 +107,7 @@ namespace SHIT.Views
 
             catch (Exception ex)
             {
-                DisplayAlert("ex", ex.Message, "ok");
+                //DisplayAlert("ex", ex.Message, "ok");
                 DisplayAlert("ex", "Ошибка подключения к серверу", "ok");
                 return groups;
 

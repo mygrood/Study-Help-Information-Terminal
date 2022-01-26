@@ -113,7 +113,7 @@ namespace SHIT.Views.Calendar.Pages
                         
                         if (array == null)
                         {
-                            DisplayAlert("какого чёрта", "todayEvents==null", "ok");
+                            //DisplayAlert("какого чёрта", "todayEvents==null", "ok");
                             return;
                         }
                         Console.WriteLine(array.Length);
@@ -213,7 +213,7 @@ namespace SHIT.Views.Calendar.Pages
 
                         if (array == null)
                         {
-                            DisplayAlert("какого чёрта", "todayEvents==null", "ok");
+                           // DisplayAlert("какого чёрта", "todayEvents==null", "ok");
                             return;
                         }
                         AdvancedEventModel[] newArray = { thisEventEdit};
@@ -252,7 +252,7 @@ namespace SHIT.Views.Calendar.Pages
 
                         if (array[0] == null)
                         {
-                            DisplayAlert("какого чёрта", "todayEvents==null", "ok");
+                           // DisplayAlert("какого чёрта", "todayEvents==null", "ok");
                             return;
                         }
                         AdvancedEventModel[] newArray = { thisEventEdit };

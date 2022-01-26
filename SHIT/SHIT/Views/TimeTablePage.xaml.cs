@@ -331,7 +331,7 @@ namespace SHIT.Views
 
             catch (Exception ex)
             {
-                DisplayAlert("ex", ex.Message, "ok");
+                //DisplayAlert("ex", ex.Message, "ok");
                 DisplayAlert("ex", "Ошибка подключения к серверу", "ok");
 
                 return rootChanges;
